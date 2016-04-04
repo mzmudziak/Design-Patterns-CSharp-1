@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IO_zadanie
+﻿namespace IO_zadanie
 {
-					class Item
-					{
-					}
+	internal class Item
+	{
+		public Item(string name, Price price)
+		{
+			Name = name;
+			Price = price;
+		}
+
+		public string Name { get; set; }
+		public Price Price { get; set; }
+	}
 }

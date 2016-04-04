@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IO_zadanie
+﻿namespace IO_zadanie
 {
-					class ItemPack
-					{
-					}
+	internal class ItemPack
+	{
+		public ItemPack(Item item, uint amount)
+		{
+			Item = item;
+			Amount = amount;
+			Price = new Price(Item.Price, amount);
+		}
+
+		public Item Item { get; set; }
+		public Price Price { get; set; }
+		public uint Amount { get; set; }
+	}
 }

@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IO_zadanie
+﻿namespace IO_zadanie
 {
-					class Customer
-					{
-					}
+	internal class Customer
+	{
+		public Customer(string name, string surname, Country country)
+		{
+			Name = name;
+			Surname = surname;
+			Country = country;
+		}
+
+		public string Name { get; set; }
+
+		public string Surname { get; set; }
+
+		public Country Country { get; set; }
+	}
 }

@@ -1,12 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IO_zadanie
 {
-					class Currency
-					{
-					}
+	internal class Currency
+	{
+		public Currency(float exchangeRate, string name)
+		{
+			ExchangeRate = exchangeRate;
+			Name = name;
+		}
+
+		public Currency()
+		{
+			ExchangeRate = 1;
+					Name  = string.Empty;
+		}
+
+		public float ExchangeRate { get; set; }
+
+		public string Name { get; set; }
+	}
 }
