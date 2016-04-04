@@ -13,11 +13,17 @@ namespace IO_zadanie
 		{
 			_ordersList = new List<Order>();
 			_ordersAmount = 0;
-
 		}
 
 		public void Add(Order order)
 		{
+			foreach (Order order1 in _ordersList)
+			{
+				if (order1.Id == order.Id)
+				{
+					return;
+				}
+			}
 			_ordersList.Add(order);
 			_ordersAmount++;
 		}
@@ -27,7 +33,7 @@ namespace IO_zadanie
 			Console.WriteLine("Total orders: " + _ordersAmount);
 			foreach (var order in _ordersList)
 			{
-					order.OrderInfo();
+				order.OrderInfo();
 			}
 		}
 

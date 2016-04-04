@@ -4,10 +4,10 @@ namespace IO_zadanie
 {
 	internal class Price
 	{
-		public Price(float netto, float tax, Currency currency)
+		public Price(decimal netto, decimal tax, Currency currency)
 		{
-			Netto = netto;
-			Brutto = netto + netto*(tax/100);
+			Netto = Math.Round((netto/currency.ExchangeRate), 2);
+			Brutto = Math.Round(((netto + netto*(tax/100))/currency.ExchangeRate), 2);
 			Currency = currency;
 		}
 
@@ -20,14 +20,14 @@ namespace IO_zadanie
 
 		public Price(Price otherPrice, uint amount)
 		{
-			Netto = otherPrice.Netto*amount;
-			Brutto = otherPrice.Brutto*amount;
+			Netto = Math.Round((otherPrice.Netto*amount), 2);
+			Brutto = Math.Round((otherPrice.Brutto*amount), 2);
 			Tax = otherPrice.Tax;
 			Currency = otherPrice.Currency;
 		}
 
-		public float Netto { get; set; }
-		public float Brutto { get; set; }
+		public decimal Netto { get; set; }
+		public decimal Brutto { get; set; }
 		public float Tax { get; set; }
 		public Currency Currency { get; set; }
 
@@ -42,8 +42,8 @@ namespace IO_zadanie
 			else if (Currency.Name.Equals(string.Empty))
 			{
 				Currency = otherPrice.Currency;
-				Netto += otherPrice.Netto;
-				Brutto += otherPrice.Brutto;
+				Netto += Math.Round((otherPrice.Netto/otherPrice.Currency.ExchangeRate), 2);
+				Brutto += Math.Round((otherPrice.Brutto/otherPrice.Currency.ExchangeRate), 2);
 			}
 			else
 			{

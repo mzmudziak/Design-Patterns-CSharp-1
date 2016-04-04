@@ -35,7 +35,10 @@ namespace IO_zadanie
 		{
 			if (PaymentStatus == false)
 			{
-				Console.WriteLine("Paying for order " + Id + ", Price: " + TotalPrice.Brutto + "brutto");
+				Console.WriteLine("Paying for order " + Id + " : " + Customer.Name + " " + Customer.Surname + " : " +
+				                  TotalPrice.Netto + " netto " + TotalPrice.Brutto + " brutto " +
+				                  Customer.Country.Currency.Name);
+				PaymentStatus = true;
 			}
 			else
 			{
@@ -45,15 +48,17 @@ namespace IO_zadanie
 
 		public void OrderInfo()
 		{
-			Console.WriteLine("ID: " + Id);
-			Console.WriteLine("Customer: " + Customer.Name);
-			Console.WriteLine("Price: " + TotalPrice.Brutto + " brutto");
+			Console.WriteLine("Order ID: " + Id);
+			Console.WriteLine("Customer: " + Customer.Name + " " + Customer.Surname);
+			Console.WriteLine("Currency: " + Customer.Country.Currency.Name);
+			Console.WriteLine("Total price: " + TotalPrice.Brutto + " brutto \n");
 			foreach (ItemPack itemPack in ItemPacks)
 			{
-				Console.WriteLine("     Item name: " +itemPack.Item.Name);
-				Console.WriteLine("     Item price: " + itemPack.Item.Price.Brutto + " brutto");
-				Console.WriteLine("     Item amount: "+ itemPack.Amount);
-				Console.WriteLine("     Pack price: " + itemPack.Price.Brutto + " brutto");
+				Console.WriteLine("     Item: " + itemPack.Item.Name);
+
+				Console.WriteLine("     Price: " + itemPack.Item.Price.Netto + " netto " + itemPack.Item.Price.Brutto + " brutto");
+				Console.WriteLine("     Amount: " + itemPack.Amount);
+				Console.WriteLine("     Total price: " + itemPack.Price.Netto + " netto " + itemPack.Price.Brutto + " brutto\n");
 			}
 		}
 	}

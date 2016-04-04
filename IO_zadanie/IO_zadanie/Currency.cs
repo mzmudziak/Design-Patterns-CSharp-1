@@ -4,7 +4,7 @@ namespace IO_zadanie
 {
 	internal class Currency
 	{
-		public Currency(float exchangeRate, string name)
+		public Currency(decimal exchangeRate, string name)
 		{
 			ExchangeRate = exchangeRate;
 			Name = name;
@@ -16,7 +16,7 @@ namespace IO_zadanie
 					Name  = string.Empty;
 		}
 
-		public float ExchangeRate { get; set; }
+		public decimal ExchangeRate { get; set; }
 
 		public string Name { get; set; }
 	}
