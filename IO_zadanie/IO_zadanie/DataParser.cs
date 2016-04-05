@@ -10,6 +10,7 @@ namespace IO_zadanie
 {
 	class DataParser
 	{
+		private static bool dataCorrect;
 		private class Data
 		{
 			public string surname;
@@ -22,15 +23,21 @@ namespace IO_zadanie
 
 		private static Data ProcessString(string[] strings)
 		{
-			Data data = new Data
+			Data data = new Data();
+			try
 			{
-				surname = strings[0],
-				name = strings[1],
-				orderId = uint.Parse(strings[2]),
-				itemAmount = uint.Parse(strings[3]),
-				itemName = strings[4],
-				cost = decimal.Parse(strings[5])
-			};
+				data.surname = strings[0];
+				data.name = strings[1];
+				data.orderId = uint.Parse(strings[2]);
+				data.itemAmount = uint.Parse(strings[3]);
+				data.itemName = strings[4];
+				data.cost = decimal.Parse(strings[5]);
+				dataCorrect = true;
+			}
+			catch (Exception exception)
+			{
+				Console.WriteLine(exception.Message);
+			}
 			return data;
 		}
 
@@ -38,30 +45,25 @@ namespace IO_zadanie
 		{
 			List<string> data = FileReader.read(filename);
 			Data processedData = new Data();
-
 			foreach (string s in data)
 			{
+				dataCorrect = false;
 				string[] strings = s.Split(' ');
-				try
+				processedData = ProcessString(strings);
+				if (dataCorrect)
 				{
-					processedData = ProcessString(strings);
+					Customer customer = customers.GetCustomer(processedData.name, processedData.surname);
+					OrdersC order = orders.ById(processedData.orderId);
+					Price price = new Price(processedData.cost, customer.Country.Tax, customer.Country.Currency);
+					Item item = new Item(processedData.itemName, price);
+					ItemPack itemPack = new ItemPack(item, processedData.itemAmount);
+					if (order == null)
+					{
+						order = new OrdersC(new Order(processedData.orderId), customer);
+					}
+					order.Order.AddElement(itemPack);
+					orders.Add(order);
 				}
-				catch (Exception e)
-				{
-					Console.WriteLine(e.Message);
-
-				}
-				Customer customer = customers.GetCustomer(processedData.name, processedData.surname);
-				Order order = orders.ById(processedData.orderId);
-				Price price = new Price(processedData.cost, customer.Country.Tax, customer.Country.Currency);
-				Item item = new Item(processedData.itemName, price);
-				ItemPack itemPack = new ItemPack(item, processedData.itemAmount);
-				if (order == null)
-				{
-					order = new Order(processedData.orderId, customer);
-				}
-				order.AddElement(itemPack);
-				orders.Add(order);
 			}
 		}
 	}

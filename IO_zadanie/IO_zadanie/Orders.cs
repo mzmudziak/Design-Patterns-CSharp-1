@@ -6,26 +6,23 @@ namespace IO_zadanie
 {
 	internal class Orders
 	{
-		private List<Order> _ordersList;
+		private List<OrdersC> _ordersList;
 		private int _ordersAmount;
-
+	  
 		public Orders()
 		{
-			_ordersList = new List<Order>();
+			_ordersList = new List<OrdersC>();
 			_ordersAmount = 0;
 		}
 
-		public void Add(Order order)
+		public void Add(OrdersC order)
 		{
-			foreach (Order order1 in _ordersList)
+			if (_ordersList.Any(order1 => order1.Order.Id == order.Order.Id))
 			{
-				if (order1.Id == order.Id)
-				{
-					return;
-				}
+				return;
 			}
 			_ordersList.Add(order);
-			_ordersAmount++;
+				_ordersAmount++;
 		}
 
 		public void List()
@@ -33,7 +30,7 @@ namespace IO_zadanie
 			Console.WriteLine("Total orders: " + _ordersAmount);
 			foreach (var order in _ordersList)
 			{
-				order.OrderInfo();
+				order.Info();
 			}
 		}
 
@@ -45,9 +42,9 @@ namespace IO_zadanie
 			}
 		}
 
-		public Order ById(uint id)
+		public OrdersC ById(uint id)
 		{
-			return _ordersList.FirstOrDefault(order => order.Id.Equals(id));
+			return _ordersList.FirstOrDefault(order => order.Order.Id.Equals(id));
 		}
 	}
 }
