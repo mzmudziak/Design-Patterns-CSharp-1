@@ -17,10 +17,10 @@ namespace IO_zadanie
 			Orders orders = new Orders();
 			customers.ShowList();
 			Console.WriteLine();
-			DataParser.Work("test.txt", customers, orders);
+			OrdersBuilder.Build("test.txt", customers, orders);
 					
 			orders.List();
-															orders.Pay();
+orders.Pay();
 		}
 	}
 }

@@ -25,6 +25,21 @@ namespace IO_zadanie
 			TotalPrice.addPrice(itemPack.Price);
 		}
 
+		public void Pay()
+		{
+			if (PaymentStatus == false)
+			{
+				Console.WriteLine("Paying for order " + Id + ": " +
+				                  TotalPrice.Netto + " netto " + TotalPrice.Brutto + " brutto " +
+				                  TotalPrice.Currency.Name);
+				PaymentStatus = true;
+			}
+			else
+			{
+				Console.WriteLine("Order " + Id + " already paid.");
+			}
+		}
+
 		public void OrderInfo()
 		{
 			Console.WriteLine("Order ID: " + Id);

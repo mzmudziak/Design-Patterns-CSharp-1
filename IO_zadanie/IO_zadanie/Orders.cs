@@ -6,21 +6,17 @@ namespace IO_zadanie
 {
 	internal class Orders
 	{
-		private List<OrdersC> _ordersList;
+		private List<CustOrders> _ordersList;
 		private int _ordersAmount;
 	  
 		public Orders()
 		{
-			_ordersList = new List<OrdersC>();
+			_ordersList = new List<CustOrders>();
 			_ordersAmount = 0;
 		}
 
-		public void Add(OrdersC order)
+		public void Add(CustOrders order)
 		{
-			if (_ordersList.Any(order1 => order1.Order.Id == order.Order.Id))
-			{
-				return;
-			}
 			_ordersList.Add(order);
 				_ordersAmount++;
 		}
@@ -42,9 +38,16 @@ namespace IO_zadanie
 			}
 		}
 
-		public OrdersC ById(uint id)
+		public CustOrders getOrderC(Customer customer)
 		{
-			return _ordersList.FirstOrDefault(order => order.Order.Id.Equals(id));
+			foreach (var ordersC in _ordersList)
+			{
+				if (ordersC.Customer.Name == customer.Name && ordersC.Customer.Name == customer.Name)
+				{
+					return ordersC;
+				}
+			}
+			return null;
 		}
 	}
 }
