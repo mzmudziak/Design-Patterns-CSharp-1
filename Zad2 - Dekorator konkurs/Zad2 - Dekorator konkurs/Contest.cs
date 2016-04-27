@@ -5,24 +5,41 @@ namespace Zad2___Dekorator_konkurs
 {
 	public class Contest : IContest
 	{
-		public List<int> Numbers;
-
 		public void Play()
 		{
-			Console.WriteLine("Casino won");
+			Console.Write("You won nothing :(");
+		}
+
+		public List<int> Numbers { get; set; }
+
+		public Contest()
+		{
+			Numbers = new List<int>();
+			AddNumbers();
 		}
 
 		public void AddNumbers()
 		{
-			string line = "";
-			int number = 101;
-			while (!line.Equals("exit"))
+			Console.WriteLine("Type your numbers.\nType \"exit\" to play.");
+			while (true)
 			{
-			 line = Console.ReadLine();
-				number = int.Parse(line);
-				Numbers.Add(number);
+				var line = Console.ReadLine();
+				if (line == null) continue;
+				int number;
+				bool result = int.TryParse(line, out number);
+				if (result)
+				{
+					Numbers.Add(number);
+				}
+				else if (line.ToLower() == "play")
+				{
+					return;
+				}
+				else
+				{
+					Console.WriteLine("Invalid command.");
+				}
 			}
 		}
 	}
-
 }

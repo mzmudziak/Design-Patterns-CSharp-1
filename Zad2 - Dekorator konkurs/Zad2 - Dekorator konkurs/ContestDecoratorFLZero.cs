@@ -19,8 +19,9 @@ namespace Zad2___Dekorator_konkurs
 			}
 		}
 
-		public ContestDecoratorFLZero(IContest decoratedContest, List<int> numbers) : base(decoratedContest, numbers)
+
+		public ContestDecoratorFLZero(IContest decoratedContest) : base(decoratedContest)
 		{
 		}
 	}
-}
+	}

@@ -19,7 +19,7 @@ namespace Zad2___Dekorator_konkurs
 			}
 		}
 
-		public ContestDecoratorMoreThanSeven(IContest decoratedContest, List<int> numbers) : base(decoratedContest, numbers)
+		public ContestDecoratorMoreThanSeven(IContest decoratedContest) : base(decoratedContest)
 		{
 		}
 	}

@@ -5,12 +5,12 @@ namespace Zad2___Dekorator_konkurs
 					public abstract class ContestDecorator : IContest
 					{
 						protected IContest DecoratedContest;
-						protected List<int> Numbers;
+						public List<int> Numbers { get; set; }
 
-						protected ContestDecorator(IContest decoratedContest, List<int> numbers )
+						protected ContestDecorator(IContest decoratedContest)
 						{
 							this.DecoratedContest = decoratedContest;
-							this.Numbers = numbers;
+							this.Numbers = decoratedContest.Numbers;
 						}
 						public void Play()
 						{

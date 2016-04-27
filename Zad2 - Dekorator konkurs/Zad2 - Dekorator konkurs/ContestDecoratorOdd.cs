@@ -10,7 +10,7 @@ namespace Zad2___Dekorator_konkurs
 		{
 			DecoratedContest.Play();
 			Reward();
-		}
+}
 
 		private void Reward()
 		{
@@ -20,13 +20,13 @@ namespace Zad2___Dekorator_konkurs
 			}
 		}
 
-		public ContestDecoratorOdd(IContest decoratedContest, List<int> numbers) : base(decoratedContest, numbers)
-		{
-		}
-
 		private bool CheckOdd()
 		{
 			return Numbers.All(number => number%2 == 0);
+		}
+
+		public ContestDecoratorOdd(IContest decoratedContest) : base(decoratedContest)
+		{
 		}
 	}
 }
