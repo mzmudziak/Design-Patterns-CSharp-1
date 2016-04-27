@@ -6,7 +6,7 @@ namespace Zad2___Dekorator_konkurs
 {
 	class ContestDecoratorOdd : ContestDecorator
 	{
-		public void Play()
+		public override void Play()
 		{
 			DecoratedContest.Play();
 			Reward();
@@ -14,7 +14,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (CheckOdd())
+			if (!CheckOdd())
 			{
 				Console.WriteLine("You won 50!");
 			}

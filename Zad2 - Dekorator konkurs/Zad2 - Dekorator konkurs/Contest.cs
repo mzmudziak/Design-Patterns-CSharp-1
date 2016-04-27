@@ -7,7 +7,6 @@ namespace Zad2___Dekorator_konkurs
 	{
 		public void Play()
 		{
-			Console.Write("You won nothing :(");
 		}
 
 		public List<int> Numbers { get; set; }
@@ -20,7 +19,7 @@ namespace Zad2___Dekorator_konkurs
 
 		public void AddNumbers()
 		{
-			Console.WriteLine("Type your numbers.\nType \"exit\" to play.");
+			Console.WriteLine("Type your numbers.\nType \"play\" to exit.");
 			while (true)
 			{
 				var line = Console.ReadLine();

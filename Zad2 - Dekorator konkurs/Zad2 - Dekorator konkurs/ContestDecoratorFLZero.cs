@@ -6,7 +6,7 @@ namespace Zad2___Dekorator_konkurs
 {
 	class ContestDecoratorFLZero : ContestDecorator
 	{
-		public void Play()
+		public override void Play()
 		{
 			DecoratedContest.Play();
 			Reward();

@@ -13,7 +13,7 @@ namespace Zad2___Dekorator_konkurs
 			this.Numbers = decoratedContest.Numbers;
 		}
 
-		public void Play()
+		public virtual void Play()
 		{
 			DecoratedContest.Play();
 		}

@@ -5,7 +5,7 @@ namespace Zad2___Dekorator_konkurs
 {
 	class ContestDecoratorMoreThanSeven : ContestDecorator
 	{
-		public void Play()
+		public override void Play()
 		{
 			DecoratedContest.Play();
 			Reward();
@@ -21,6 +21,7 @@ namespace Zad2___Dekorator_konkurs
 
 		public ContestDecoratorMoreThanSeven(IContest decoratedContest) : base(decoratedContest)
 		{
+	
 		}
 	}
 }
