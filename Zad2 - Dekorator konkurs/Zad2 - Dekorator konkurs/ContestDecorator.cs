@@ -12,7 +12,6 @@ namespace Zad2___Dekorator_konkurs
 			this.DecoratedContest = decoratedContest;
 			this.Numbers = decoratedContest.Numbers;
 		}
-
 		public virtual void Play()
 		{
 			DecoratedContest.Play();
