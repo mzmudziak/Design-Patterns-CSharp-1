@@ -11,6 +11,7 @@ namespace Zad2___Dekorator_konkurs
 			DecoratedContest.Play();
 			Reward();
 		}
+
 		private void Reward()
 		{
 			if (Numbers.First().Equals(0) && Numbers.Last().Equals(0))
@@ -24,4 +25,4 @@ namespace Zad2___Dekorator_konkurs
 		{
 		}
 	}
-	}
+}

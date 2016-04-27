@@ -13,7 +13,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (Numbers.Count > 7) 
+			if (Numbers.Count > 7)
 			{
 				Console.WriteLine("You won 150!");
 			}

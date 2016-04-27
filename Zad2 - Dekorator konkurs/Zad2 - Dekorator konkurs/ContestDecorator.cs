@@ -2,19 +2,20 @@
 
 namespace Zad2___Dekorator_konkurs
 {
-					public abstract class ContestDecorator : IContest
-					{
-						protected IContest DecoratedContest;
-						public List<int> Numbers { get; set; }
+	public abstract class ContestDecorator : IContest
+	{
+		protected IContest DecoratedContest;
+		public List<int> Numbers { get; set; }
 
-						protected ContestDecorator(IContest decoratedContest)
-						{
-							this.DecoratedContest = decoratedContest;
-							this.Numbers = decoratedContest.Numbers;
-						}
-						public void Play()
-						{
-						  DecoratedContest.Play();
-						}
-					}
+		protected ContestDecorator(IContest decoratedContest)
+		{
+			this.DecoratedContest = decoratedContest;
+			this.Numbers = decoratedContest.Numbers;
+		}
+
+		public void Play()
+		{
+			DecoratedContest.Play();
+		}
+	}
 }

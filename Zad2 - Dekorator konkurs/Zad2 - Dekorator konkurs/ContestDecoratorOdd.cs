@@ -10,7 +10,7 @@ namespace Zad2___Dekorator_konkurs
 		{
 			DecoratedContest.Play();
 			Reward();
-}
+		}
 
 		private void Reward()
 		{
