@@ -14,7 +14,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (Numbers.First().Equals(0) && Numbers.Last().Equals(0))
+			if (DecoratedContest.Numbers.First().Equals(0) && DecoratedContest.Numbers.Last().Equals(0))
 			{
 				Console.WriteLine("You won 100!");
 			}

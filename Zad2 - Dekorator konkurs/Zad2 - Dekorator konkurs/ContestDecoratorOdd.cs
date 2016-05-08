@@ -14,7 +14,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (!CheckOdd())
+			if (CheckOdd())
 			{
 				Console.WriteLine("You won 50!");
 			}
@@ -22,7 +22,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private bool CheckOdd()
 		{
-			return Numbers.All(number => number%2 == 0);
+			return DecoratedContest.Numbers.All(number => number%2 != 0);
 		}
 
 		public ContestDecoratorOdd(IContest decoratedContest) : base(decoratedContest)
