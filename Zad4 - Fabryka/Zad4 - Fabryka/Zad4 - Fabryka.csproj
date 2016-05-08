@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessLister.cs" />
     <Compile Include="AdminFactory.cs" />
     <Compile Include="Administrator.cs" />
     <Compile Include="Boss.cs" />
