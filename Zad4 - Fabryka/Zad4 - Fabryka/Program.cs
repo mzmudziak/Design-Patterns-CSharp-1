@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Configuration;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zad4___Fabryka
 {
 	class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			IFactory factory;
 			Worker worker;
-			int factoryChoice = -1;
+			var factoryChoice = -1;
 			ListChoice();
 
 			while (int.TryParse(Console.ReadLine(), out factoryChoice))
@@ -45,7 +41,7 @@ namespace Zad4___Fabryka
 			}
 		}
 
-		static void ListChoice()
+		private static void ListChoice()
 		{
 			string[] factoryWorkerTypes =
 			{
@@ -53,13 +49,13 @@ namespace Zad4___Fabryka
 				"Boss",
 				"Cleaner",
 				"Receptionist",
-				"Guest",
+				"Guest"
 			};
 
 			Console.Clear();
-			foreach (var factoryWorkerType in factoryWorkerTypes.Select((value, index) => new { index, value }))
+			foreach (var factoryWorkerType in factoryWorkerTypes.Select((value, index) => new {index, value}))
 			{
-				Console.WriteLine(factoryWorkerType.index + 1 + ": " + factoryWorkerType.value);
+				Console.WriteLine(factoryWorkerType.index+1 + ": " + factoryWorkerType.value);
 			}
 		}
 	}

@@ -9,7 +9,7 @@ namespace Zad4___Fabryka
 
 		public void ListAccess()
 		{
-			Console.WriteLine((this.GetType().ToString()));
+			Console.WriteLine(GetType().ToString());
 			Console.WriteLine("Access:");
 			foreach (var i in RoomAccess)
 			{
