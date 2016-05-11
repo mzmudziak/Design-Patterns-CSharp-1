@@ -59,6 +59,7 @@ namespace Zad4___Fabryka
 			{
 				Console.WriteLine((int) factoryWorkerType + ": " + factoryWorkerType);
 			}
+			Console.WriteLine();
 		}
 	}
 }
