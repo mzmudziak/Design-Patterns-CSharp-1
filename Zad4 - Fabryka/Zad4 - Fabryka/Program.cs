@@ -5,57 +5,59 @@ namespace Zad4___Fabryka
 {
 	class Program
 	{
+		private enum Workers
+		{
+			Admin = 1,
+			Boss = 2,
+			Cleaner = 3,
+			Receptionist = 4,
+			Guest = 5
+		};
+
 		private static void Main(string[] args)
 		{
-			IFactory factory;
-			Worker worker;
-			var factoryChoice = -1;
+			int factoryChoice;
+
 			ListChoice();
 
 			while (int.TryParse(Console.ReadLine(), out factoryChoice))
 			{
 				ListChoice();
-				switch (factoryChoice)
+				Workers whichWorker = (Workers) factoryChoice;
+				IFactory factory;
+				switch (whichWorker)
 				{
-					case 1:
+					case Workers.Admin:
 						factory = new AdminFactory();
 						break;
-					case 2:
+					case Workers.Boss:
 						factory = new BossFactory();
 						break;
-					case 3:
+					case Workers.Cleaner:
 						factory = new CleanerFactory();
 						break;
-					case 4:
+					case Workers.Receptionist:
 						factory = new ReceptionistFactory();
 						break;
-					case 5:
+					case Workers.Guest:
 						factory = new GuestFactory();
 						break;
 					default:
 						Console.WriteLine("Wrong choice");
 						continue;
 				}
-				worker = factory.GetWorker();
+				var worker = factory.GetWorker();
 				worker.ListAccess();
 			}
 		}
 
 		private static void ListChoice()
 		{
-			string[] factoryWorkerTypes =
-			{
-				"Admin",
-				"Boss",
-				"Cleaner",
-				"Receptionist",
-				"Guest"
-			};
-
 			Console.Clear();
-			foreach (var factoryWorkerType in factoryWorkerTypes.Select((value, index) => new {index, value}))
+			Workers[] workers = (Workers[]) Enum.GetValues(typeof (Workers));
+			foreach (var factoryWorkerType in workers)
 			{
-				Console.WriteLine(factoryWorkerType.index+1 + ": " + factoryWorkerType.value);
+				Console.WriteLine((int) factoryWorkerType + ": " + factoryWorkerType);
 			}
 		}
 	}
