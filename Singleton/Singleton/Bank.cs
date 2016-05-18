@@ -24,5 +24,15 @@ namespace Singleton
 			_transferCommand.Execute();
 			_transferCommand = null;
 		}
+
+		public void TransferAll()
+		{
+			CommandQueue queue = CommandQueue.GetInstance();
+			ICommand command;
+			while ((command = queue.GetCommand()) != null)
+			{
+				command.Execute();
+			}
+		}
 	}
 }

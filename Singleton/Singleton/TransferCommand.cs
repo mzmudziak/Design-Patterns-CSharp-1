@@ -13,7 +13,7 @@ namespace Singleton
 		private ITransferable _transferGiver;
 		private decimal _moneyGiven;
 
-		public TransferCommand(ITransferable receiver, ITransferable giver, decimal moneyGivenDecimal)
+		public TransferCommand(ITransferable giver, ITransferable receiver, decimal moneyGivenDecimal)
 		{
 			_transferReceiver = receiver;
 			_transferGiver = giver;

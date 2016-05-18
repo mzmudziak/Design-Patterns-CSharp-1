@@ -44,8 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountData.cs" />
+    <Compile Include="AccountRepository.cs" />
     <Compile Include="Bank.cs" />
     <Compile Include="CommandQueue.cs" />
+    <Compile Include="CommandData.cs" />
+    <Compile Include="DataParser.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ITransferable.cs" />
     <Compile Include="Program.cs" />
@@ -53,7 +58,9 @@
     <Compile Include="TransferCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

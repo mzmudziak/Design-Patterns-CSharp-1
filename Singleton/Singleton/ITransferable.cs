@@ -11,6 +11,7 @@ namespace Singleton
 		void Transfer(ITransferable receiver, decimal moneyGiven);
 		void AddMoney(decimal moneyAmount);
 		int GetAccountNumber();
+		Account GetAccount();
 		decimal GetBalance();
 	}
 }
