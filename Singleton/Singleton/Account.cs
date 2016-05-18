@@ -17,27 +17,43 @@ namespace Singleton
 		}
 		public void Transfer(ITransferable receiver, decimal transferAmount)
 		{
+			
+			Console.WriteLine("Transaction: account " + _accountNumber + " sending " + transferAmount +" to account " + receiver.GetAccountNumber());
+			Console.WriteLine("Account " + _accountNumber + " balance:  " + _moneyAmount);
+			Console.WriteLine("Account " + receiver.GetAccountNumber() + " balance:  " + receiver.GetBalance());
 			if (transferAmount < _moneyAmount)
 			{
 				_moneyAmount -= transferAmount;
-				receiver.addMoney(transferAmount);
+				receiver.AddMoney(transferAmount);
+				Console.WriteLine("Account " + _accountNumber + " balance: " + _moneyAmount);
+				Console.WriteLine("Account " + receiver.GetAccountNumber() + " balance:  " + receiver.GetBalance());
+				Console.WriteLine("Transaction successful\n");
+			}
+			else
+			{
+				Console.WriteLine("Transaction unsuccessful\n");
 			}
 
-			Console.WriteLine("Transferring from " + _accountNumber + " to " + receiver.GetAccount()._accountNumber + " (" + transferAmount + ")");
+		
+
 		}
 
-		public void addMoney(decimal money)
+		public void AddMoney(decimal money)
 		{
 			_moneyAmount += money;
-		}
-		public void getMoneyAmount()
-		{
-			Console.WriteLine("I am " + _accountNumber + " and i have " + _moneyAmount);
+			Console.WriteLine("Account " + _accountNumber + " received: " + money);
 		}
 
-		public Account GetAccount()
+
+
+		public int GetAccountNumber()
 		{
-			return this;
+			return _accountNumber;
+		}
+
+		public decimal GetBalance()
+		{
+			return _moneyAmount;
 		}
 	}
 }

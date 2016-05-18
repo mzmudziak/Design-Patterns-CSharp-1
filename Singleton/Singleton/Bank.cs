@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace Singleton
 {
-	class Bank // INVOKER
+	class Bank
 	{
-		private ICommand _command;
+		private ICommand _transferCommand;
 
-		public Bank(ICommand command)
+		public void GetCommand(ICommand command)
 		{
-			_command = command;
+			if (_transferCommand == null)
+			{
+				_transferCommand = command;
+			}
 		}
 
 		public void Transfer()
 		{
-			_command.Execute();
+			if (_transferCommand == null) return;
+			_transferCommand.Execute();
+			_transferCommand = null;
 		}
 	}
 }

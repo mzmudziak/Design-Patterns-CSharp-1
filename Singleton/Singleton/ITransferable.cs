@@ -9,8 +9,8 @@ namespace Singleton
 	interface ITransferable
 	{
 		void Transfer(ITransferable receiver, decimal moneyGiven);
-		void getMoneyAmount();
-		void addMoney(decimal money);
-		Account GetAccount();
+		void AddMoney(decimal moneyAmount);
+		int GetAccountNumber();
+		decimal GetBalance();
 	}
 }
