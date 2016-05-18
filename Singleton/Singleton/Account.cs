@@ -15,18 +15,18 @@ namespace Singleton
 			_accountNumber = accountNumber;
 			_moneyAmount = moneyAmount;
 		}
-		public void Transfer(ITransferable receiver, int transferAmount)
+		public void Transfer(ITransferable receiver, decimal transferAmount)
 		{
 			if (transferAmount < _moneyAmount)
 			{
 				_moneyAmount -= transferAmount;
-				receiver.getMoney(transferAmount);
+				receiver.addMoney(transferAmount);
 			}
 
 			Console.WriteLine("Transferring from " + _accountNumber + " to " + receiver.GetAccount()._accountNumber + " (" + transferAmount + ")");
 		}
 
-		public void getMoney(decimal money)
+		public void addMoney(decimal money)
 		{
 			_moneyAmount += money;
 		}

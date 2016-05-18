@@ -15,9 +15,9 @@ namespace Singleton
 			_command = command;
 		}
 
-		public void Transfer(int transferAmount)
+		public void Transfer()
 		{
-			_command.Execute(transferAmount);
+			_command.Execute();
 		}
 	}
 }

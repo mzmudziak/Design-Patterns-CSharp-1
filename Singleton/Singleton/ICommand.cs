@@ -8,6 +8,6 @@ namespace Singleton
 {
 	interface ICommand
 	{
-		void Execute(int transferAmount);
+		void Execute();
 	}
 }

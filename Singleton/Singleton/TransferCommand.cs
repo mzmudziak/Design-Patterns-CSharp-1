@@ -11,16 +11,18 @@ namespace Singleton
 	{
 		private ITransferable _transferReceiver;
 		private ITransferable _transferGiver;
+		private decimal _moneyGiven;
 
-		public TransferCommand(ITransferable receiver, ITransferable giver)
+		public TransferCommand(ITransferable receiver, ITransferable giver, decimal moneyGivenDecimal)
 		{
 			_transferReceiver = receiver;
 			_transferGiver = giver;
+			_moneyGiven = moneyGivenDecimal;
 		}
 
-		public void Execute(int transferAmount)
+		public void Execute()
 		{
-			_transferGiver.Transfer(_transferReceiver, transferAmount);
+			_transferGiver.Transfer(_transferReceiver, _moneyGiven);
 		}
 	}
 }

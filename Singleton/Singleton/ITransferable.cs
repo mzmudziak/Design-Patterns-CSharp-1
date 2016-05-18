@@ -8,9 +8,9 @@ namespace Singleton
 {
 	interface ITransferable
 	{
-		void Transfer(ITransferable receiver, int transferAmount);
+		void Transfer(ITransferable receiver, decimal moneyGiven);
 		void getMoneyAmount();
-		void getMoney(decimal money);
+		void addMoney(decimal money);
 		Account GetAccount();
 	}
 }

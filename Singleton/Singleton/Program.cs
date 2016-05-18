@@ -12,11 +12,11 @@ namespace Singleton
 		{
 			ITransferable account1 = new Account(1,100);
 			ITransferable account2 = new Account(2,100);
-			ICommand transferCommand = new TransferCommand(account1,account2);
+			ICommand transferCommand = new TransferCommand(account1, account2, 30);
 			account1.getMoneyAmount();
 			account2.getMoneyAmount();
-			Bank bank = new Bank(transferCommand);
-			bank.Transfer(30);
+			Bank bank = new Bank(new TransferCommand(account1, account2, 30));
+			bank.Transfer();
 			account1.getMoneyAmount();
 			account2.getMoneyAmount();
 		}
