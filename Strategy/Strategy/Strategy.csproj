@@ -7,8 +7,8 @@
     <ProjectGuid>{76B8B001-E2F0-4364-919F-2C48B8B7595C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zad3___Strategia</RootNamespace>
-    <AssemblyName>Zad3 - Strategia</AssemblyName>
+    <RootNamespace>Strategy</RootNamespace>
+    <AssemblyName>Strategy</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
