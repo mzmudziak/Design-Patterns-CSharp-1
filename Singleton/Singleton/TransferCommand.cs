@@ -9,9 +9,9 @@ namespace Singleton
 {
 	class TransferCommand : ICommand
 	{
-		private ITransferable _transferReceiver;
-		private ITransferable _transferGiver;
-		private decimal _moneyGiven;
+		private readonly ITransferable _transferReceiver;
+		private readonly ITransferable _transferGiver;
+		private readonly decimal _moneyGiven;
 
 		public TransferCommand(ITransferable giver, ITransferable receiver, decimal moneyGivenDecimal)
 		{

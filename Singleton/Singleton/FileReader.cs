@@ -20,7 +20,10 @@ namespace Singleton
 				CommandData commandData = DataParser.ProcessCommands(s);
 				var commandQueue = CommandQueue.GetInstance();
 				var accountRepository = AccountRepository.GetInstance();
-				commandQueue.AddCommand(new TransferCommand(accountRepository.GetAccount(commandData.AccountNumberGiver),accountRepository.GetAccount(commandData.AccountNumberReceiver),commandData.TransferAmount));
+				TransferCommand command = new TransferCommand(accountRepository.GetAccount(commandData.AccountNumberGiver), 
+																																																		accountRepository.GetAccount(commandData.AccountNumberReceiver),
+																																																		commandData.TransferAmount);
+				commandQueue.AddCommand(command);
 			}
 		}
 

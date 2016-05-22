@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zad1__Adapter
+namespace Adapter
 {
 					class Program
 					{
