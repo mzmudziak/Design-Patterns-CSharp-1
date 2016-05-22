@@ -10,7 +10,7 @@ namespace OrderManagement
 	{
 		public static void Build(string filename, Customers customers, Orders orders)
 		{
-			List<string> data = FileReader.read(filename);
+			List<string> data = FileReader.Read(filename);
 			Data processedData = new Data();
 			foreach (string s in data)
 			{
