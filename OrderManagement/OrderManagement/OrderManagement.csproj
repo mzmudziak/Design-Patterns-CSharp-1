@@ -7,8 +7,8 @@
     <ProjectGuid>{E3EE4E50-FCEC-47E4-BAB1-C2490D79F8E6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IO_zadanie</RootNamespace>
-    <AssemblyName>IO_zadanie</AssemblyName>
+    <RootNamespace>OrderManagement</RootNamespace>
+    <AssemblyName>OrderManagement</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

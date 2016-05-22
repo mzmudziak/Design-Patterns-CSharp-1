@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IO_zadanie
+namespace OrderManagement
 {
 	internal class Customers
 	{

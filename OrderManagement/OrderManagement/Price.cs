@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IO_zadanie
+namespace OrderManagement
 {
 	internal class Price
 	{

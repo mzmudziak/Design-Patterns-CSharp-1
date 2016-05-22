@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IO_zadanie
+namespace OrderManagement
 {
 	internal class Order
 	{

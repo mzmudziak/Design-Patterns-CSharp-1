@@ -1,4 +1,4 @@
-﻿namespace IO_zadanie
+﻿namespace OrderManagement
 {
 	internal class Item
 	{
