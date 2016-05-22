@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace Zad2___Dekorator_konkurs
+namespace Decorator
 {
 	class ContestDecoratorFLZero : ContestDecorator
 	{
@@ -14,7 +13,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (DecoratedContest.Numbers.First().Equals(0) && DecoratedContest.Numbers.Last().Equals(0))
+			if (this.DecoratedContest.GetNumbers().First().Equals(0) && DecoratedContest.GetNumbers().Last().Equals(0))
 			{
 				Console.WriteLine("You won 100!");
 			}

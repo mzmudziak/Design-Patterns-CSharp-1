@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zad2 - Dekorator konkurs", "Zad2 - Dekorator konkurs\Zad2 - Dekorator konkurs.csproj", "{0EBCAE80-3AC0-4F7F-9C94-BC207D1F7E60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{0EBCAE80-3AC0-4F7F-9C94-BC207D1F7E60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

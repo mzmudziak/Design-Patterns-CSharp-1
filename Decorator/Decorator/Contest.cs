@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Zad2___Dekorator_konkurs
+namespace Decorator
 {
 	public class Contest : IContest
 	{
@@ -10,6 +10,11 @@ namespace Zad2___Dekorator_konkurs
 		}
 
 		public List<int> Numbers { get; set; }
+
+		public List<int> GetNumbers()
+		{
+			return Numbers;
+		}
 
 		public Contest()
 		{

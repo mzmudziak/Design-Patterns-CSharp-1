@@ -1,19 +1,24 @@
 ﻿using System.Collections.Generic;
 
-namespace Zad2___Dekorator_konkurs
+namespace Decorator
 {
 	public abstract class ContestDecorator : IContest
 	{
 		protected IContest DecoratedContest;
 
-		public List<int> Numbers { get; set; }
 		protected ContestDecorator(IContest decoratedContest)
 		{
-			this.DecoratedContest = decoratedContest;
+			DecoratedContest = decoratedContest;
 		}
+
 		public virtual void Play()
 		{
 			DecoratedContest.Play();
+		}
+
+		public List<int> GetNumbers()
+		{
+			return DecoratedContest.GetNumbers();
 		}
 	}
 }

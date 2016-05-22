@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Zad2___Dekorator_konkurs
+namespace Decorator
 {
 	class ContestDecoratorMoreThanSeven : ContestDecorator
 	{
@@ -13,7 +12,7 @@ namespace Zad2___Dekorator_konkurs
 
 		private void Reward()
 		{
-			if (DecoratedContest.Numbers.Count > 7)
+			if (DecoratedContest.GetNumbers().Count > 7)
 			{
 				Console.WriteLine("You won 150!");
 			}
@@ -21,7 +20,6 @@ namespace Zad2___Dekorator_konkurs
 
 		public ContestDecoratorMoreThanSeven(IContest decoratedContest) : base(decoratedContest)
 		{
-	
 		}
 	}
 }

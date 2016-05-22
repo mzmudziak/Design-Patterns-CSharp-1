@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zad2___Dekorator_konkurs
+namespace Decorator
 {
 	class Program
 	{
